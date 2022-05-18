@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["ES6", "DOM"],
+    "strict": true,
+    "module": "CommonJS",
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "target": "ES6",
+    "declaration": false,
+    "emitDeclarationOnly": false, // switch to true
+    "resolveJsonModule": true,
+    "moduleResolution": "Node",
+    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "allowUnreachableCode": false,
+    "noImplicitThis": true,
+    "isolatedModules": true,
+    "skipLibCheck": true
+  },
+  "include": ["./src"]
+}
