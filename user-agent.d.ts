@@ -1,11 +1,6 @@
-// Complete https://wicg.github.io/ua-client-hints/#interface
-declare interface Navigator extends NavigatorUA {}
-declare interface WorkerNavigator extends NavigatorUA {}
-
-// https://wicg.github.io/ua-client-hints/#navigatorua
-declare interface NavigatorUA {
-  readonly userAgentData?: NavigatorUAData
-}
+/**
+ * ua-client-hints interface spec: https://wicg.github.io/ua-client-hints/#interface
+ */
 
 // https://wicg.github.io/ua-client-hints/#dictdef-navigatoruabrandversion
 interface NavigatorUABrandVersion {
@@ -22,7 +17,7 @@ interface UADataValues {
   readonly bitness?: string
   readonly model?: string
   readonly platformVersion?: string
-  readonly uaFullVersion?: string
+  readonly uaFullVersion?: string // deprecated in favor of fullVersionList
 }
 
 // https://wicg.github.io/ua-client-hints/#dictdef-ualowentropyjson
@@ -37,3 +32,12 @@ interface NavigatorUAData extends UALowEntropyJSON {
   getHighEntropyValues(hints: string[]): Promise<UADataValues>
   toJSON(): UALowEntropyJSON
 }
+
+// https://wicg.github.io/ua-client-hints/#navigatorua
+interface NavigatorUA {
+  readonly userAgentData?: NavigatorUAData
+}
+
+// Complete https://wicg.github.io/ua-client-hints/#interface
+interface Navigator extends NavigatorUA {}
+interface WorkerNavigator extends NavigatorUA {}

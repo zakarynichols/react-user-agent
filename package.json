@@ -1,8 +1,9 @@
 {
-  "name": "react-user-agent",
-  "version": "0.1.0",
+  "name": "react-user-agent-data",
+  "version": "0.1.42",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "types": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node webpack-server.js"
@@ -33,24 +34,21 @@
     "prettier": "^2.6.2",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "ts-loader": "^9.3.0",
     "typescript": "^4.6.4",
     "webpack": "^5.72.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0"
   },
   "peerDependencies": {
-    "react": "16.0.0 - 18.0.0",
-    "react-dom": "16.0.0 - 18.0.0"
+    "react": "^16.8.0 || ^17.0.0 || ^18.0.0"
   },
   "peerDependenciesMeta": {
     "react-dom": {
       "optional": true
     }
   },
-  "dependencies": {
-    "react-query": "^3.39.0"
-  },
   "files": [
-    "src"
+    "dist"
   ]
 }

@@ -1,24 +1,24 @@
 const path = require("path")
 
-process.env.NODE_ENV = "development"
+process.env.NODE_ENV = "production"
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: "./src",
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "index.bundle.js",
+    filename: "index.js",
     clean: true
   },
   devtool: "inline-source-map",
   plugins: [],
   resolve: {
-    extensions: [".ts", ".js"]
+    extensions: [".ts", ".tsx", ".jsx", ".js"]
   },
   module: {
     rules: [
       {
-        test: /\.ts$/,
+        test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
       }

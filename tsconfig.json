@@ -6,8 +6,9 @@
     "noImplicitAny": true,
     "noImplicitReturns": true,
     "target": "ES6",
-    "declaration": false,
-    "emitDeclarationOnly": false, // switch to true
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": false,
     "resolveJsonModule": true,
     "moduleResolution": "Node",
     "jsx": "preserve",
@@ -15,8 +16,9 @@
     "esModuleInterop": true,
     "allowUnreachableCode": false,
     "noImplicitThis": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "outDir": "./dist",
+    "listFiles": false
   },
-  "include": ["./src"]
+  "include": ["./src", "user-agent.d.ts"]
 }
