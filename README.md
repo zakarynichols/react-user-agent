@@ -13,7 +13,13 @@ Hook for getting information about the browser and operating system of a user.
 - Collecting information about the browser and device to identify application errors.
 - Blocking spammers, bots, and crawlers.
 
-### Example Usage
+### Installation
+
+```sh
+$ npm install react-user-agent-data
+```
+
+### Examples
 
 ```ts
 import { useUserAgentData, Hint } from "react-user-agent-data"
@@ -42,5 +48,5 @@ const lowEntropyData = useUserAgentData({ entropy: "low" })
 
 ### References
 
-https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API
-https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData
+- https://developer.mozilla.org/en-US/docs/Web/API/User-Agent_Client_Hints_API
+- https://developer.mozilla.org/en-US/docs/Web/API/NavigatorUAData
