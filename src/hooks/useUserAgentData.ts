@@ -11,15 +11,19 @@ const LOW_ENTROPY: LowEntropy = "low"
 
 type UseUserAgentDataParams<T extends HighEntropy | LowEntropy> = T extends HighEntropy
   ? { entropy: HighEntropy; hints: Hint[] }
-  : { entropy: LowEntropy; hints?: Hint[] }
+  : T extends LowEntropy
+  ? { entropy: LowEntropy; hints?: Hint[] }
+  : void
 
-export type UserAgentData<T extends HighEntropy | LowEntropy> = T extends HighEntropy
+export type UserAgentDataReturn<T extends HighEntropy | LowEntropy> = T extends HighEntropy
   ? UADataValues
-  : UALowEntropyJSON
+  : T extends LowEntropy
+  ? UALowEntropyJSON
+  : never
 
 export function useUserAgentData(params: { entropy: HighEntropy; hints: Hint[] }): UADataValues
 export function useUserAgentData(params: { entropy: LowEntropy }): UALowEntropyJSON
-
+export function useUserAgentData(): UALowEntropyJSON
 /**
  * Type-safe hook for accessing the current browser and operating system information.
  * @param entropy Amount of information this hook reveals about the browser.
@@ -28,9 +32,10 @@ export function useUserAgentData(params: { entropy: LowEntropy }): UALowEntropyJ
  */
 export function useUserAgentData<T extends HighEntropy | LowEntropy>(
   params: UseUserAgentDataParams<T>
-): UserAgentData<LowEntropy | HighEntropy> {
+): // params: UseUserAgentDataParams<T>
+UserAgentDataReturn<LowEntropy | HighEntropy> {
   const [userAgentValues, setUserAgentValues] = useState<
-    UserAgentData<LowEntropy> | UserAgentData<HighEntropy>
+    UserAgentDataReturn<LowEntropy> | UserAgentDataReturn<HighEntropy>
   >({})
   const [error, setError] = useState<null | Error>(null)
 
