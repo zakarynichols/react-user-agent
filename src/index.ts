@@ -1,3 +1,3 @@
-export { useUserAgentData, UserAgentDataReturn as UserAgentData } from "./hooks/useUserAgentData"
+export { useUserAgentData } from "./hooks/useUserAgentData"
 
-export { UADataValues } from "./types"
+export { UADataValues, UALowEntropyJSON } from "./types"

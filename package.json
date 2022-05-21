@@ -1,6 +1,6 @@
 {
   "name": "react-user-agent-data",
-  "version": "0.1.43",
+  "version": "0.1.50",
   "description": "",
   "main": "./dist/index.js",
   "types": "",
