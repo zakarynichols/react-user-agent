@@ -28,7 +28,13 @@ import { useUserAgentData, Hint } from "react-user-agent-data"
  * An array containing the hints to be returned.
  */
 const hints: Hint[] = useMemo(
-  () => ["architecture", "model", "bitness", "platformVersion", "fullVersionList"],
+  () => [
+    "architecture",
+    "model",
+    "bitness",
+    "platformVersion",
+    "fullVersionList"
+  ],
   []
 )
 
